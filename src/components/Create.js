@@ -7,6 +7,7 @@ import { Button } from "react-bootstrap";
 import "./Create.css";
 import axios from "axios";
 import { myContext } from "../Context";
+import { useNavigate } from "react-router-dom";
 
 function Create() {
   const user = useContext(myContext);
@@ -21,6 +22,7 @@ function Create() {
   const [markBtn, setMarkBtn] = useState(true);
   const [stopBtn, setStopBtn] = useState(true);
   const [resetBtn, setResetBtn] = useState(true);
+  const navigate = useNavigate();
 
   const startHandler = () => {
     setStart(new Date().getTime());
@@ -76,6 +78,7 @@ function Create() {
       googleId: req_googleId,
       username: username,
     });
+    navigate("/dashboard");
   }
 
   return (

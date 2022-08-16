@@ -12,10 +12,12 @@ function Navbarcomp() {
 
   const logout = () => {
     axios
-      .get("https://audiomarking-backend.herokuapp.com/auth/logout")
+      .get("https://audiomarking-backend.herokuapp.com/auth/logout", {
+        withCredentials: true,
+      })
       .then((res) => {
         if (res.status === 200) {
-          console.log("Logout:", res);
+          // console.log("Logout:", res);
           window.location.href = "/";
         }
       });
@@ -27,8 +29,8 @@ function Navbarcomp() {
           Audio Marking
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+        <Navbar.Collapse style={{ flexGrow: 0 }} id="basic-navbar-nav">
+          <Nav className="ml-auto">
             {context ? (
               <>
                 <Nav.Link as={Link} to="/create">
@@ -36,6 +38,9 @@ function Navbarcomp() {
                 </Nav.Link>
                 <Nav.Link as={Link} to="/public">
                   Public
+                </Nav.Link>
+                <Nav.Link as={Link} to="/dashboard">
+                  Dashboard
                 </Nav.Link>
                 <Nav.Link onClick={logout}>Logout</Nav.Link>
               </>
