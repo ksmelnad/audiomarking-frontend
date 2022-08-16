@@ -23,9 +23,14 @@ function Navbarcomp() {
       });
   };
   return (
-    <Navbar bg="light" variant="light" expand="lg">
+    <Navbar
+      style={{ backgroundColor: "#6E85B7", color: "white" }}
+      varient="light"
+      sticky="top"
+      expand="lg"
+    >
       <Container>
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand style={{ color: "white" }} as={Link} to="/">
           Audio Marking
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -33,19 +38,21 @@ function Navbarcomp() {
           <Nav className="ml-auto">
             {context ? (
               <>
-                <Nav.Link as={Link} to="/create">
+                <Nav.Link style={{ color: "white" }} as={Link} to="/create">
                   Create
                 </Nav.Link>
-                <Nav.Link as={Link} to="/public">
+                <Nav.Link style={{ color: "white" }} as={Link} to="/public">
                   Public
                 </Nav.Link>
-                <Nav.Link as={Link} to="/dashboard">
+                <Nav.Link style={{ color: "white" }} as={Link} to="/dashboard">
                   Dashboard
                 </Nav.Link>
-                <Nav.Link onClick={logout}>Logout</Nav.Link>
+                <Nav.Link style={{ color: "white" }} onClick={logout}>
+                  Logout
+                </Nav.Link>
               </>
             ) : (
-              <Nav.Link as={Link} to="/login">
+              <Nav.Link style={{ color: "white" }} as={Link} to="/login">
                 Login
               </Nav.Link>
             )}

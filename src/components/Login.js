@@ -10,10 +10,11 @@ function Login() {
     <>
       <Container>
         <h3>Loginpage</h3>
+
+        <button className="btn btn-link" onClick={googleLogin}>
+          Login with Google
+        </button>
       </Container>
-      <button className="btn btn-link" onClick={googleLogin}>
-        Login with Google
-      </button>
     </>
   );
 }

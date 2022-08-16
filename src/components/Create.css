@@ -2,7 +2,7 @@
   display: flex;
   overflow: hidden;
   overflow-y: scroll;
-  height: 70vh;
+  height: 65vh;
   scroll-behavior: smooth;
   flex-direction: column-reverse;
 }
