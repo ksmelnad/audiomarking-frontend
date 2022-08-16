@@ -9,19 +9,19 @@ import { BsTrash } from "react-icons/bs";
 function Dashboard() {
   const [markings, setMarkings] = useState([]);
   const user = useContext(myContext);
-  const req_googleId = user.googleId;
+  const googleId = user.googleId;
   useEffect(() => {
     // async function getMarkings() {
     axios
       .get("https://audiomarking-backend.herokuapp.com/marking", {
-        req_googleId: req_googleId,
+        googleId: googleId,
       })
       .then((res) => {
         // console.log(res);
         setMarkings(res.data);
       });
     // }
-  }, [req_googleId]);
+  }, [googleId]);
 
   async function deleteMarking(id) {
     console.log(id);

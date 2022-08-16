@@ -8,9 +8,7 @@ function Login() {
   };
   return (
     <>
-      <Container>
-        <h3>Loginpage</h3>
-
+      <Container className="mt-5">
         <button className="btn btn-link" onClick={googleLogin}>
           Login with Google
         </button>
