@@ -13,7 +13,7 @@ function Dashboard() {
   useEffect(() => {
     // async function getMarkings() {
     axios
-      .get("https://audiomarking-backend.herokuapp.com/marking", {
+      .post("https://audiomarking-backend.herokuapp.com/marking", {
         googleId: googleId,
       })
       .then((res) => {
